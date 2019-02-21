@@ -18,7 +18,7 @@ int main()
 
     Stack **stack = create_stack();
 
-    for (size_t j = 0; j < 100000; j++) {
+    for (size_t j = 0; j < 200; j++) {
       push(stack, 42 + j);
     }
 
@@ -36,8 +36,7 @@ int main()
 
 Stack **create_stack()
 {
-  Stack **root = malloc(sizeof(Stack *));
-  *root = malloc(sizeof(Stack));
+  Stack **root = calloc(1, sizeof(Stack *));
   *root = NULL;
   return root;
 }
@@ -47,7 +46,6 @@ void destoy_stack(Stack **stack)
   while (!check_empty(stack)) {
     pop(stack);
   }
-  free(*stack);
   free(stack);
 }
 
