@@ -9,7 +9,7 @@ unsigned long long int DynFib(int num, int *numOfCalls, unsigned long long int *
 {
     if (cache[num] != 0)
     {
-        return cache[num]
+        return cache[num];
     }
     (*numOfCalls)++;
     int ret = 0;
